@@ -1,0 +1,61 @@
+@import "./node_modules/modern-css-reset/dist/reset.css";
+
+:root {
+  --element: #ffa500;
+  --bg: #fffffa;
+  --color: #0d0d0d;
+  --width: 300px;
+}
+
+
+html {
+  background: var(--bg);
+  color: var(--color);
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+}
+
+body {
+  padding: 3rem;
+}
+
+input[type="text"] {
+  width: 8ch;
+  margin: 1rem auto;
+  display: block;
+  border: 2px solid #0d0d0d;
+  border-radius: 4px;
+  padding: 0.75em 0.5em;
+  font-weight: 700;
+  display: inline;
+  margin: 0 0.5ch;
+}
+
+ol {
+  counter-reset: my-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: var(--element);
+  counter-increment: my-counter;
+  position: relative;
+  padding: 1rem;
+  width: var(--width);
+  border-radius: 10px;
+  margin: 1rem auto;
+  opacity: 0.2;
+
+  &:before {
+    content: counter(my-counter);
+    font-weight: 700;
+    color: var(--color);
+  }
+}
+
+.form {
+  margin: 0 auto;
+  width: var(--width);
+  font-weight: 700;
+}
